@@ -1,0 +1,493 @@
+{% args grouped_products, ipserver, products %}
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="SMART DASHBOARD SYSTEM KOPERASI MENARA TEKNIKA BBPPMPV BOE MALANG."/>
+    <meta name="keywords" content="E-Commerce App Responsive Mobile Phone"/>
+    <meta name="Upskilling/Reskiling'20 - 2024" content="Boe-Malang"/>
+    <title> Smart Dashboard System </title>
+    <link rel="icon" href="{{ipserver}}/static/img/logo_mt.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ipserver}}/static/img/logo_mt.png" type="image/x-icon"/>
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com/"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&amp;display=swap" rel="stylesheet"/>
+    <!-- Flag icon css -->
+    <link rel="stylesheet" href="{{ipserver}}/static/assets/css/vendors/flag-icon.css"/>
+    <!-- iconly-icon-->
+    <link rel="stylesheet" href="{{ipserver}}/static/assets/css/iconly-icon.css"/>
+    <link rel="stylesheet" href="{{ipserver}}/static/assets/css/bulk-style.css"/>
+    <!-- iconly-icon-->
+    <link rel="stylesheet" href="{{ipserver}}/static/assets/css/themify.css"/>
+    <!--fontawesome-->
+    <link rel="stylesheet" href="{{ipserver}}/static/assets/css/fontawesome-min.css"/>
+    <!-- Whether Icon css-->
+
+    <link rel="stylesheet" type="text/css" href="{{ipserver}}/static/assets/css/vendors/simple-datatables/dist/style.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ipserver}}/static/assets/css/vendors/weather-icons/weather-icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ipserver}}/static/assets/css/vendors/scrollbar.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ipserver}}/static/assets/css/vendors/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ipserver}}/static/assets/css/vendors/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ipserver}}/static/assets/css/vendors/slick-theme.css"/>
+    <!-- App css -->
+    <link rel="stylesheet" href="{{ipserver}}/static/assets/css/style.css"/>
+    <link id="color" rel="stylesheet" href="{{ipserver}}/static/assets/css/color-1.css" media="screen"/>
+</head>
+
+<body>
+    <!-- page-wrapper Start-->
+    <!-- tap on top starts-->
+    <div class="tap-top"><i class="iconly-Arrow-Up icli"></i></div>
+    <!-- tap on tap ends-->
+    <!-- loader-->
+    <div class="loader-wrapper">
+      <div class="loader"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="page-wrapper compact-wrapper" id="pageWrapper" style="background-color:#F3F3E0">
+      <header class="page-header row">
+        <div class="logo-wrapper d-flex align-items-center col-auto"><a href="/">
+          <img class="light-logo img-fluid" src="{{ipserver}}/static/img/logo-mt.png" alt="logo"/>
+        </a><a class="close-btn toggle-sidebar" href="javascript:void(0)">
+            <svg class="svg-color">
+              <use href="/static/iconly-sprite.svg#Category"></use>
+            </svg></a></div>
+        <div class="page-main-header col">
+          <marquee direction="left"> <h4>Balai Besar Pengembangan Penjaminan Mutu Pendidikan Vokasi Bidang Otomotif dan Elektronika (BBPPMPV BOE) </h4></marquee>
+          <div class="nav-right">
+          </div>
+        </div>
+      </header>
+        <div class="page-body">
+          <!-- Start::content pages -->
+           <!-- Container-fluid starts-->
+            <div class="container-fluid dashboard-2">
+
+                     <center><div id="loader"></div></center> <!-- Set Loader -->
+                        <div id="bagian1"> <!-- BAGIAN 1 -->
+                           <div class="card-body">
+                                  <div class="blog-single">
+                                    <div class="blog-box blog-details">
+                                        <img class="img-fluid w-100" src="{{ ipserver }}//static/img/koperasi.png" alt="blog-main">
+                                    </div></div>
+                                </div>
+                        <div class="row">
+                          <div class="text-center mt-3 mb-3">
+                                <h3>KATEGORI PRODUK KAMI</h3>
+                          </div>
+                        {% for category, products in grouped_products.items() %}
+
+                              <!-- slide 1 -->
+                              <div class="col-xxl-2 col-xl-3 col-sm-6 box-col-6">
+                                <div class="card">
+                                  <div class="card-body">
+                                    <div class="items-slider">
+                                      <div class="swiper mySwiper1">
+                                        <div class="swiper-wrapper">
+                                          <!-- Get DATA -->
+                                            {% for product in products %}
+                                              <div class="swiper-slide">
+                                                <div class="slider-box bg-light-warning">
+                                                  <div class="header-top">
+                                                      <a href="/show/{{product['category_id']}}"> <!-- link details produk -->
+                                                          <div class="badge badge-success rated-product-badge">Tersedia</div>
+                                                          <img class="img-fluid" src="{{ ipserver }}/{{ product['image']}}" alt=""/>
+                                                          <div class="i fa-regular fa-heart"></div>
+                                                      </a>
+                                                  </div>
+                                                </div>
+                                                <div class="slider-content text-center">
+                                                  <h4 class="text-primary">{{product['category_name']}}</h4>
+                                                  <p class="mb-0">{{ product['product_name'] }}</p>
+                                                  <h6>Rp.&nbsp{{ product['product_price'] }}</h6>
+                                                </div>
+                                              </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                        {% endfor %}
+
+                        </div>
+                      </div>
+
+                    <!-- Bagian 2 -->
+                    <div id="bagian2">
+                        <div class="row">
+                          <div class="text-center mt-3 mb-3">
+                                <h3>GRAFIK PRODUK PENJUALAN</h3>
+                          </div>
+                           <!-- Grafik 1 -->
+                              <div class="col-sm-12 col-xl-6 box-col-6">
+                                <div class="card">
+                                    <div class="card overflow-hidden">
+                                      <div class="card-header card-no-border pb-0">
+                                        <h3>PRODUK TERJUAL</h3>
+                                      </div>
+                                      <div class="card-body chart-block">
+                                        <div id="bar-chart2"></div>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+
+                             <!-- Grafik 2 -->
+                              <div class="col-sm-12 col-xl-6 box-col-6">
+                                <div class="card">
+                                  <div class="card-header card-no-border pb-0">
+                                    <h3>KATEGORI PRODUK TERJUAL</h3>
+                                  </div>
+                                  <div class="card-body p-0 chart-block">
+                                      <div class="chart-overflow" id="pie-chart2"></div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            <div class="col-sm-12 col-xl-6 box-col-6">
+                                    <div class="card">
+                                      <div class="card-header card-no-border pb-0">
+                                        <h3>PENJUALAN PRODUK PER BULAN</h3>
+                                      </div>
+                                      <div class="card-body">
+                                        <div class="chart-container">
+                                          <div class="row">
+                                            <div class="col-12">
+                                              <canvas id="quantityChart" width="400" height="200"></canvas>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                            <div class="col-sm-12 col-xl-6 box-col-6">
+                                <div class="card">
+                                  <div class="card-header card-no-border pb-0">
+                                    <div class="header-top">
+                                      <h3>UPDATE PRODUK HARI INI</h3>
+                                      <div class="dropdown icon-dropdown">
+                                        <button class="btn" id="userdropdown5" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis"></i></button>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown5">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="card-body timeline-card">
+                                    <div class="activity-timeline">
+
+                                        <div id="list_products">
+
+                                        </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Bagian 4 -->
+                    <div id="bagian4">
+                          <div class="row">
+                          <div class="text-center mt-3 mb-3">
+                            <h3>KONDISI CUACA SAAT INI</h3>
+                          </div>
+                                <div class="col-sm-12 col-xl-2 box-col-2">
+                                    <div class="card">
+                                      <div class="card-header card-no-border pb-0">
+                                        <h4 class="text-center">SUHU (&degC)</h4>
+                                      </div>
+                                      <div class="card-body">
+                                        <div class="knob-block text-center">
+                                          <input class="knob" id="temperature"
+                                                 data-width="150"
+                                                 data-height="150"
+                                                 data-angleoffset="180"
+                                                 data-fgcolor="#308e87"
+                                                 data-skin="tron"
+                                                 value="0"
+                                                 type="text"
+                                                 data-thickness=".1">
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                              <div class="col-sm-12 col-xl-8 box-col-8">
+                                    <div class="card analytics-card">
+                                      <div class="card-body sale-chart-box">
+                                        <ul class="d-flex">
+                                          <li class="statistic-icon">
+                                            <div>
+                                              <div>
+                                                <div class="statistic-content"><span class="primary-dot"> </span>SUHU UDARA</div>
+                                              </div>
+                                              <div class="statistic-num ms-auto text-end font-danger d-flex align-items-center">
+                                                <h5 id="te"></h5>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <li class="statistic-icon">
+                                            <div>
+                                              <div>
+                                                <div class="statistic-content"><span class="secondary-dot"> </span>TEKANAN UDARA</div>
+                                              </div>
+                                              <div class="statistic-num ms-auto text-end font-primary d-flex align-items-center">
+                                                <h5 id="pe"></h5>
+                                              </div>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                        <div id="chart-school-performance">
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-xl-2 box-col-2">
+                                    <div class="card">
+                                      <div class="card-header card-no-border pb-0">
+                                        <h5 class="text-center">TEKANAN UDARA (hPa)*1000</h5>
+                                      </div>
+                                      <div class="card-body">
+                                        <div class="knob-block text-center">
+                                          <input class="knob" id="pressure"
+                                                 data-width="150"
+                                                 data-height="150"
+                                                 max="100000"
+                                                 data-angleoffset="180"
+                                                 data-fgcolor="#FA812F"
+                                                 data-skin="tron"
+                                                 type="number"
+                                                 data-thickness=".1" value="">
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+          <!-- Start::content pages -->
+        </div>
+
+    </div>
+    
+    <!-- jquery-->
+    <script src="{{ipserver}}/static/assets/js/vendors/jquery/jquery.min.js"></script>
+    <!-- bootstrap js-->
+    <script src="{{ipserver}}/static/assets/js/vendors/bootstrap/dist/js/bootstrap.bundle.min.js" defer=""></script>
+    <script src="{{ipserver}}/static/assets/js/vendors/bootstrap/dist/js/popper.min.js" defer=""></script>
+    <!--fontawesome-->
+    <script src="{{ipserver}}/static/assets/js/vendors/font-awesome/fontawesome-min.js"></script>
+    <!-- feather-->
+    <script src="{{ipserver}}/static/assets/js/vendors/feather-icon/feather.min.js"></script>
+    <script src="{{ipserver}}/static/assets/js/vendors/feather-icon/custom-script.js"></script>
+
+    <!-- Plugins JS start-->
+
+    <script src="{{ipserver}}/static/assets/js/tooltip-init.js"></script>
+    <script src="{{ipserver}}/static/assets/js/animation/wow/wow.min.js"></script>
+    <script src="{{ipserver}}/static/assets/js/landing/landing.js"></script>
+
+    <!-- config-->
+    <script src="{{ipserver}}/static/assets/js/config.js"></script>
+
+    <!-- apex-->
+    <script src="{{ipserver}}/static/assets/js/chart/apex-chart/apex-chart.js"></script>
+
+    <!-- knobchart-->
+    <script src="{{ipserver}}/static/assets/js/chart/knob/knob.min.js"></script>
+    <!-- page_knobchart-->
+    <script src="{{ipserver}}/static/assets/js/chart/knob/knob-chart.js"></script>
+
+    <!-- chart_widget
+    <script src="{{ipserver}}/static/assets/js/chart-widget.js"></script> -->
+
+
+    <script src="{{ipserver}}/static/assets/js/vendors/swiper/swiper-bundle.min.js"></script>
+    <!-- product_miniswiper-->
+
+    <!-- dashboard_2
+    <script src="{{ipserver}}/static/assets/js/dashboard/dashboard_2.js"></script>-->
+
+    <!-- googlechart-->
+    <script src="{{ipserver}}/static/assets/js/chart/google/google-chart-loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- page_googlechart
+    <script src="{{ipserver}}/static/assets/js/chart/google/google-chart.js"></script>-->
+
+    <script src="static/chart_products_month.js"></script>
+    <script src="static/filter_products_stock.js"></script>
+    <script src="static/sensor.js"></script>
+    <script src="static/chartSensor.js"></script>
+
+
+    <!-- custom script -->
+    <script src="{{ipserver}}/static/assets/js/script.js"></script>
+    
+<script>
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.load("current", { packages: ["corechart", "bar"] });
+      google.charts.setOnLoadCallback(drawBasicCategory);
+
+    // Function to generate a random color in hexadecimal format
+    function randomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function drawBasicCategory() {
+      let category = [];
+      let dataArray = [];
+      let products = [];
+
+      api = "http://192.168.227.239:80";
+      fetch(api + "/api/sold_out_products_summary")
+            .then(response => response.json())
+              .then(data => {
+                category = data; //simpan data respon pada array category
+                if ($("#pie-chart2").length > 0) {
+                    console.log(category);
+                   // Add the header row
+                   dataArray.push(['Category', 'Sales']);
+                   //tambahkan data response category pada dataArray
+                   for (let i = 0; i < category.length; i++) {
+                        dataArray.push([category[i].name, category[i].total_sales]);
+                    }
+
+                    var data = google.visualization.arrayToDataTable(dataArray); //simpan dataArray untuk ditampilkan pada chart
+                    var options = {
+                                    title: "Daftar Kategori Produk Paling Banyak Terjual",
+                                    is3D: true,
+                                    width: "100%",
+                                    height: 300,
+                                    colors: [
+                                    "#e74b2b",
+                                    "#8B5DFF",
+                                    "#3eb95f",
+                                    AdmiroAdminConfig.secondary,
+                                    ],
+                    };
+                    var chart = new google.visualization.PieChart(document.getElementById("pie-chart2"));
+                    chart.draw(data, options); //tampilkan data pada chart
+                 }
+              })
+              .catch(error => {
+                console.error('Error fetching data:', error);
+       });
+
+       fetch(api + "/api/sold_out_products")
+         .then(response => response.json())
+           .then(data => {
+             products = data; //simpan data respon pada array category
+
+            if ($("#bar-chart2").length > 0) {
+                console.log(products);
+                 //dataArray.push(['Product', 'Sales', {role: "style",},]);
+
+              var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Product');  // Categorical data (string type)
+                    data.addColumn('number', 'Sales');
+                    // Generate random colors for each data point
+
+                    //tambahkan data response product pada dataArray
+                    for (let i = 0; i < products.length; i++) {
+                        data.addRows([[products[i].name, products[i].total_sales]]);
+                        console.log([products[i].name]);
+                    }
+                    // Generate random colors for each data point
+              var colors = [];
+              for (var i = 0; i < data.getNumberOfRows(); i++) {
+                colors.push(randomColor());
+              }
+
+              var b = {
+                  title: "Daftar Produk Paling Banyak Terjual",
+                  width: "100%",
+                  height: 250,
+                  colors: colors,  // Apply random colors to bars
+                  hAxis: {
+                  title: 'Stock Terjual',
+                  minValue: 0
+                },
+                vAxis: {
+                  title: 'Product'
+                },
+                  bar: {
+                    groupWidth: "95%",
+                  },
+                  legend: {
+                    position: "none",
+                  },
+                },
+                c = new google.visualization.BarChart(
+                  document.getElementById("bar-chart2")
+                );
+              c.draw(data, b);
+            }
+
+           })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+       });
+
+    }
+
+  </script>
+
+  <script>
+        window.onload = function() {
+        /// scroll back to top
+         window.scrollTo(0,0);
+        }
+
+        function autoScrollandReload(scrollDistance,pause){
+            /// start the interval with the pause in between executions
+            var interval = setInterval(function(){
+
+              /// denife values, not necessary but easyier to read
+              var scrolled = window.pageYOffset;
+              var scroll_size = document.body.scrollHeight;
+              var scroll_remaining = scroll_size-scrolled;;
+
+              /// check if scrolling is necessary
+              if(scroll_remaining <= window.innerHeight){
+                 clearInterval(interval);
+
+                 /// scroll back to top
+                 window.scrollTo(0,0);
+
+                 /// do here what you want
+                 location.reload();
+
+              }else{
+                 window.scrollBy(0,scrollDistance);
+              };
+
+            },pause);
+
+        };
+        autoScrollandReload(100,12000);
+  </script>
+
+  </body>
+</html>
+

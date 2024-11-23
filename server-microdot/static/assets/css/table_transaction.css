@@ -1,0 +1,80 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    min-width: 600px; /* Set a minimum width to maintain readability */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* Prevents text from wrapping within the cell */
+}
+
+th {
+    background-color: #f4f4f9;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    /* Adjust font size and padding for mobile */
+    th, td {
+        padding: 10px 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Stack table rows into a block layout for very small screens */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers */
+    thead tr {
+        display: none;
+    }
+
+    /* Display each cell as its own row with labels on small screens */
+    tr {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        font-size: 0.9em;
+    }
+
+    /* Add labels for each row (using the `data-label` attribute) */
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 10px;
+        color: #333;
+    }
+}
