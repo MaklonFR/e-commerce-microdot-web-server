@@ -1,6 +1,15 @@
 **E-Commerce App Smart System Server IoT**
 
-Cara menjalankannya:
+**Tampilan Server**
+
+![image](https://github.com/user-attachments/assets/28c5516b-4292-439c-a717-5951254116c9)
+
+**Tampilan Client**
+
+![image](https://github.com/user-attachments/assets/d4566751-5248-494a-b2cf-c2583a14b391)
+
+
+**Cara menjalankannya:**
 1. Download/Clone Reposytory e-commerce-microdot-web-server
 2. Salin dan Ekstrak Projek pada direktory folder yang telah disiapkan
 3. Buka Project server-flask dengan IDE PyCharm
