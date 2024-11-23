@@ -1,10 +1,10 @@
 **E-Commerce App Smart System Server IoT**
 
-**Tampilan Server**
+**A) Tampilan Server**
 
 ![image](https://github.com/user-attachments/assets/28c5516b-4292-439c-a717-5951254116c9)
 
-**Tampilan Client**
+**B) Tampilan Client**
 
 ![image](https://github.com/user-attachments/assets/d4566751-5248-494a-b2cf-c2583a14b391)
 
