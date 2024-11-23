@@ -117,10 +117,10 @@ def index(request):
     """Serve the index page with a list of all products."""
     products = fetch_all_products()  # Fetch all products
     print(products)
-    sorted_products = sorted(products, key=lambda x: x['category_name'])
+    sorted_products = sorted(products, key=lambda x: x['category_id'])
     
     grouped_products = {}
-    for category, items in groupby(sorted_products, key=lambda x: x['category_name']):
+    for category, items in groupby(sorted_products, key=lambda x: x['category_id']):
         grouped_products[category] = list(items)  
     return render_template("index.html", grouped_products=grouped_products, ipserver=ipserver, products=products) 
 
