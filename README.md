@@ -16,9 +16,9 @@
 
 **    A. Server-Flask**
    
-        a) Buat Virtual Enviorement
+        a) Buat Virtual Enviorement 
    
-        b) Instaal library yang diminta
+        b) Install library Python yang diminta
    
         c) Update/ubah IP Address pada file app.py baris paling bawah sesuai IP Komputer yang dipakai
    
@@ -41,4 +41,6 @@
         f) Jalankan projeknya  (Running) 
 
 
-Created by Kelompok 2 Kelas Pemrograman Web Framework Angkatan 20 - Balai Besar Pengembangan Penjaminan Mutu Pendidikan Vokasi Bidang Otomotif dan Elektronika (BBPPMPV BOE) 
+Created by Kelompok 2 Kelas Pemrograman Web Framework Angkatan 20 - 
+
+Balai Besar Pengembangan Penjaminan Mutu Pendidikan Vokasi Bidang Otomotif dan Elektronika (BBPPMPV BOE) 
