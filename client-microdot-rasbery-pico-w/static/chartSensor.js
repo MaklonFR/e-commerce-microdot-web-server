@@ -30,7 +30,7 @@ function showChart (){
             dataLabels: {
               enabled: false,
             },
-            colors: [AdmiroAdminConfig.secondary, AdmiroAdminConfig.primary],
+            colors: [AdmiroAdminConfig.primary, AdmiroAdminConfig.secondary],
             stroke: {
               curve: "smooth",
               width: 5,
