@@ -34,9 +34,9 @@
    
         d) Copy semua file pada folder project Client-Microdot-Rasbery-Pico-W yg didownload tadi ke dalam Rasbery Pico W
    
-        d) Buka file chart_products_month.js dan filter_products_stock.js. Ubah api = "http://192.168.227.239:80" sesuai dengan komputer yang digunakan. Save semua filenya.
+        d) Buka file chart_products_month.js dan filter_products_stock.js. Ubah api = "http://192.168.227.239:80" sesuai dengan IP komputer yang digunakan. Save semua filenya.
    
-        e) Buka file main.py
+        e) Buka file main.py. Ubah IP_SERVER = "http://192.168.227.239:80" sesuai dengan IP komputer yang digunakan. Save semua filenya.
    
         f) Jalankan projeknya  (Running) 
 
